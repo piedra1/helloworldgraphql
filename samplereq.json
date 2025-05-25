@@ -1,0 +1,30 @@
+query {
+  customerById(id: 1001) {
+  id
+  firstName
+  lastName
+  email
+}
+}
+
+
+mutation {
+addCustomer(input: {
+firstName: "Michael"
+lastName: "Jackson"
+email: "mj02@mj.com"
+phoneNumber: "2118846"
+address: "Bodoland"
+city: "New York"
+state: "NJ"
+zipCode: "23123"
+}) {
+id
+firstName
+lastName
+email
+zipCode
+}
+}
+
+http://localhost:8080/graphql
