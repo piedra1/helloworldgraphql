@@ -65,7 +65,7 @@ type Query{
     products: [Product]!
     productById(id: ID): Product
     orders: [Order]!
-    orderById(id: ID): Order
+    orderLines: [OrderLine]
 }
 
 type Mutation{

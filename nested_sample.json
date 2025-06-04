@@ -1,0 +1,37 @@
+query {
+  orders {
+  id
+  customer {
+  id
+  firstName
+  lastName
+  email
+  phoneNumber
+  address
+  city
+  state
+  zipCode
+}
+salesperson {
+  id
+  firstName
+  lastName
+  email
+  phoneNumber
+  address
+  city
+  state
+  zipCode
+}
+orderLines {
+  id
+  order {
+  id
+}
+product {
+  id
+}
+quantity
+}
+}
+}
