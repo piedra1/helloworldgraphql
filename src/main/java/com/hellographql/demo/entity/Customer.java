@@ -1,9 +1,10 @@
 package com.hellographql.demo.entity;
 
+
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "customers")
+@Table(name="CUSTOMERS")
 public class Customer {
     @Id
     @Column(name="CUSTOMER_ID")

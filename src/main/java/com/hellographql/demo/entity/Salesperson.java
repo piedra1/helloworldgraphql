@@ -1,16 +1,39 @@
 package com.hellographql.demo.entity;
 
+import jakarta.persistence.*;
 
-
-public class CustomerInput {
+@Entity
+@Table(name="SALESPEOPLE")
+public class Salesperson {
+    @Id
+    @Column(name="SALESPERSON_ID")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long id;
+    @Column(name="FIRST_NAME")
     private String firstName;
+    @Column(name="LAST_NAME")
     private String lastName;
+    @Column(name="EMAIL")
     private String email;
+    @Column(name="PHONE")
     private String phoneNumber;
+    @Column(name="ADDRESS")
     private String address;
+    @Column(name="CITY")
     private String city;
+    @Column(name="STATE")
     private String state;
+    @Column(name="ZIPCODE")
     private String zipCode;
+
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long customerId) {
+        this.id = customerId;
+    }
 
     public String getFirstName() {
         return firstName;
@@ -32,8 +55,8 @@ public class CustomerInput {
         return email;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setEmail(String emailAddress) {
+        this.email = emailAddress;
     }
 
     public String getPhoneNumber() {
@@ -74,18 +97,5 @@ public class CustomerInput {
 
     public void setZipCode(String zipCode) {
         this.zipCode = zipCode;
-    }
-
-    public Customer getCustomerEntity(){
-        Customer customer = new Customer();
-        customer.setFirstName(this.firstName);
-        customer.setLastName(this.lastName);
-        customer.setEmail(this.email);
-        customer.setPhoneNumber(this.phoneNumber);
-        customer.setAddress(this.address);
-        customer.setCity(this.city);
-        customer.setState(this.state);
-        customer.setZipCode(this.zipCode);
-        return customer;
     }
 }
